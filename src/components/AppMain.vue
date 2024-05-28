@@ -1,10 +1,12 @@
 <script>
 import CardList from "./AppMainComponents/CardList.vue";
+import FoundBar from "./AppMainComponents/FoudBar.vue";
 
 export default {
 	name: "AppMain",
 	components: {
 		CardList,
+		FoundBar,
 	},
 	data() {
 		return {};
@@ -13,7 +15,18 @@ export default {
 </script>
 
 <template>
-	<CardList />
+	<div class="listBox p-5">
+		<FoundBar />
+		<CardList />
+	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.listBox {
+	background-color: white;
+}
+
+.foundBox {
+	background-color: black;
+}
+</style>

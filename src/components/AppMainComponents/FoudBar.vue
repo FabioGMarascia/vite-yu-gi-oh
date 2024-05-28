@@ -1,14 +1,11 @@
 <script>
-import SingleCard from "./SingleCard.vue";
 import store from "../../data/store.js";
 
 export default {
-	name: "CardList",
+	name: "FoundBar",
 	components: {
-		SingleCard,
 		store,
 	},
-	props: ["item"],
 	data() {
 		return {
 			store,
@@ -18,8 +15,8 @@ export default {
 </script>
 
 <template>
-	<div class="row mx-0 justify-content-between">
-		<SingleCard v-for="card in store.cards" :element="card" />
+	<div class="foundBox p-4 text-white mx-2 mt-2 fw-bold fs-6">
+		Found {{ store.cards.length }} cards
 	</div>
 </template>
 

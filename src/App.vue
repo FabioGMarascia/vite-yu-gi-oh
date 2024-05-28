@@ -52,7 +52,7 @@ export default {
 		<div class="row">
 			<div class="col-3 pe-0">
 				<select class="form-select mb-4 fw-bold" v-model="selected">
-					<option selected value="">Select the archetype</option>
+					<option value="">Select the archetype</option>
 					<option v-for="archetype in store.archetypeList">
 						{{ archetype.archetype_name }}
 					</option>
