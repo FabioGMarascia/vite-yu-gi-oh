@@ -6,7 +6,6 @@ export default {
 	name: "CardList",
 	components: {
 		SingleCard,
-		store,
 	},
 	data() {
 		return {

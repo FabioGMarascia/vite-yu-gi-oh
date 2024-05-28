@@ -14,7 +14,7 @@ export default {
 		return {};
 	},
 	mounted() {
-		axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0").then((result) => {
+		axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=15").then((result) => {
 			store.cards = result.data.data;
 		});
 	},
