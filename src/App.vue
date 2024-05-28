@@ -49,9 +49,9 @@ export default {
 <template>
 	<AppHeader />
 	<div class="mainBox py-4">
-		<div class="row">
-			<div class="col-3 pe-0">
-				<select class="form-select mb-4 fw-bold" v-model="selected">
+		<div class="row justify-content-center gap-2">
+			<div class="col-2 px-0 mb-4">
+				<select class="form-select fw-bold w-100" v-model="selected">
 					<option value="">Select the archetype</option>
 					<option v-for="archetype in store.archetypeList">
 						{{ archetype.archetype_name }}
@@ -72,10 +72,5 @@ export default {
 .mainBox {
 	background-color: #d48f38;
 	padding: 0 12rem;
-}
-
-select {
-	margin-left: 3.5rem;
-	width: 15rem;
 }
 </style>
