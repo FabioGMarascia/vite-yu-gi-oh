@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-	<div class="row mx-0 py-3 deb">
+	<div class="row mx-0 py-3">
 		<div class="col-1 pe-0 my-auto text-center">
 			<img src="../assets/yu-gi-oh-logo.jpg" />
 		</div>

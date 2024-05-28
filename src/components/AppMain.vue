@@ -10,8 +10,8 @@ export default {
 </script>
 
 <template>
-	<div class="mainBox py-4">
-		<select class="form-select ms-3 mb-4">
+	<div class="mainBox py-4 deb">
+		<select class="form-select ms-5 mb-4 deb">
 			<option selected>Open this select menu</option>
 			<option value="1">Alien</option>
 			<option value="2">Two</option>
@@ -28,6 +28,7 @@ export default {
 }
 
 select {
+	margin-left: 8rem;
 	width: 15rem;
 }
 </style>
