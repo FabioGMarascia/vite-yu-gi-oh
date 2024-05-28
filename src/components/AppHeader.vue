@@ -13,8 +13,8 @@ export default {
 			<img src="../assets/yu-gi-oh-logo.jpg" />
 		</div>
 
-		<div class="col-3 my-auto ps-0">
-			<h1 class="mb-0">Yu-Gi-Oh Api</h1>
+		<div class="col-2 my-auto ps-0">
+			<h1 class="mb-0 text-center">Yu-Gi-Oh Api</h1>
 		</div>
 	</div>
 </template>
