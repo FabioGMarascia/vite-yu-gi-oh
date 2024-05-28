@@ -13,8 +13,6 @@ export default {
 			store,
 		};
 	},
-	methods: {},
-	mounted() {},
 };
 </script>
 
