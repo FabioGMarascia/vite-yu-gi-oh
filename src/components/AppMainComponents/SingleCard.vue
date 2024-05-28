@@ -1,7 +1,7 @@
 <script>
 export default {
 	name: "SingleCard",
-	props: ["element"],
+	props: { element: Object },
 };
 </script>
 
@@ -11,7 +11,7 @@ export default {
 
 		<div class="cardInfoBox text-center py-4">
 			<h2 class="text-white fw-bold">{{ element.name }}</h2>
-			<span>{{ element.race }}</span>
+			<span>{{ element.archetype }}</span>
 		</div>
 	</div>
 </template>

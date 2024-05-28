@@ -7,6 +7,7 @@ export default {
 	components: {
 		SingleCard,
 	},
+	props: ["item"],
 	data() {
 		return {
 			store,
