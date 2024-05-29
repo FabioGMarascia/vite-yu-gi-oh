@@ -18,6 +18,7 @@ export default {
 			selected: "",
 			store,
 			allCards: [],
+			checkScroll: false,
 		};
 	},
 	methods: {
@@ -38,6 +39,14 @@ export default {
 				behavior: "smooth",
 			});
 		},
+		handleScroll() {
+			if (window.scrollY > 20) {
+				this.checkScroll = true;
+				console.log(`ciao`);
+			} else {
+				this.checkScroll = false;
+			}
+		},
 	},
 	created() {
 		axios.get(this.cardUrl).then((result) => {
@@ -49,6 +58,9 @@ export default {
 			this.store.archetypeList = result.data;
 		});
 	},
+	mounted() {
+		window.addEventListener(`scroll`, this.handleScroll);
+	},
 };
 </script>
 
@@ -56,7 +68,7 @@ export default {
 	<AppHeader />
 	<div class="mainBox py-4">
 		<div class="col-2 px-0 mb-4 mx-auto">
-			<select class="fw-bold w-100" v-model="selected" @change="getAcrchetype">
+			<select class="fw-bold w-100 text-center" v-model="selected" @change="getAcrchetype">
 				<option value="">Select the archetype</option>
 				<option v-for="archetype in store.archetypeList">
 					{{ archetype.archetype_name }}
@@ -70,6 +82,7 @@ export default {
 			type="button"
 			class="btn btn-danger btn-lg position-fixed"
 			id="btn-scroll-top"
+			v-if="checkScroll"
 			@click="backToTop">
 			<i class="fas fa-arrow-up"></i>
 		</button>
