@@ -13,7 +13,7 @@ export default {
 	},
 	data() {
 		return {
-			cardUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=300&offset=0",
+			cardUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=2000&offset=0",
 			archetypeUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
 			selected: "",
 			store,
@@ -22,17 +22,15 @@ export default {
 	},
 	methods: {
 		getAcrchetype() {
-			setTimeout(() => {
-				if (this.selected != "") {
-					axios
-						.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=" + this.selected)
-						.then((result) => {
-							this.store.cards = result.data.data;
-						});
-				} else {
-					this.store.cards = this.allCards;
-				}
-			}, 1);
+			if (this.selected != "") {
+				axios
+					.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=" + this.selected)
+					.then((result) => {
+						this.store.cards = result.data.data;
+					});
+			} else {
+				this.store.cards = this.allCards;
+			}
 		},
 	},
 	created() {
@@ -52,7 +50,7 @@ export default {
 	<AppHeader />
 	<div class="mainBox py-4">
 		<div class="col-2 px-0 mb-4 mx-auto">
-			<select class="form-select fw-bold w-100" v-model="selected" @input="getAcrchetype">
+			<select class="form-select fw-bold w-100" v-model="selected" @change="getAcrchetype">
 				<option value="">Select the archetype</option>
 				<option v-for="archetype in store.archetypeList">
 					{{ archetype.archetype_name }}
