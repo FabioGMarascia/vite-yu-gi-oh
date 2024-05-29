@@ -32,6 +32,12 @@ export default {
 				this.store.cards = this.allCards;
 			}
 		},
+		backToTop() {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			});
+		},
 	},
 	created() {
 		axios.get(this.cardUrl).then((result) => {
@@ -50,7 +56,7 @@ export default {
 	<AppHeader />
 	<div class="mainBox py-4">
 		<div class="col-2 px-0 mb-4 mx-auto">
-			<select class="form-select fw-bold w-100" v-model="selected" @change="getAcrchetype">
+			<select class="fw-bold w-100" v-model="selected" @change="getAcrchetype">
 				<option value="">Select the archetype</option>
 				<option v-for="archetype in store.archetypeList">
 					{{ archetype.archetype_name }}
@@ -59,6 +65,14 @@ export default {
 		</div>
 
 		<AppMain />
+
+		<button
+			type="button"
+			class="btn btn-danger btn-lg position-fixed"
+			id="btn-scroll-top"
+			@click="backToTop">
+			<i class="fas fa-arrow-up"></i>
+		</button>
 	</div>
 </template>
 
@@ -66,5 +80,10 @@ export default {
 .mainBox {
 	background-color: #d48f38;
 	padding: 0 12rem;
+}
+
+#btn-scroll-top {
+	bottom: 20px;
+	right: 20px;
 }
 </style>
